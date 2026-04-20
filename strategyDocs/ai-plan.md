@@ -38,6 +38,7 @@ Prompt → Review → Lint → Test → Commit → Repeat
 - No agent commits — each member commits under their own GitHub account
 - Hand-edits only after a failed re-prompt attempt (logged in ai-use-log.md)
 - All work lives in the repo
+- Everyone works on individual branches
 
 ---
 
