@@ -107,11 +107,22 @@ Reel count effectively limits which rules are viable:
 | 6 to 7-reel grid (6×5, 7×7) | Mostly Cluster pays, Scatter / All-pays                           | Standard for grid-style slots                                                |
 | Asymmetric reels            | Megaways (2 to 7 symbols per reel, variable)                      | Based on BTG patent                                                          |
 
-Key points:
+### 5.4 Most Common Combinations in the Market
 
-- On 3-reel slots, Fixed Payline is effectively the only realistic rule. Ways and Cluster rules are dull with so few symbols
-- From 5-reel upward, all rules become possible, which is the default for modern slots
-- 6-reel slots and square grids (7×7) pair well with Cluster pays
+The industry default is overwhelming: 5-reel × 3-row with 20 to 25 fixed paylines, along with Wild and Scatter symbols that trigger Free Spins. Well over half of new online slot releases follow this template.
+
+| Category          | Combination                                                      | Market Position            | Examples                                      |
+| ----------------- | ---------------------------------------------------------------- | -------------------------- | --------------------------------------------- |
+| Default standard  | 5-reel × 3-row, 20 to 25 paylines, Wild and Scatter (Free Spins) | Dominant first place       | Book of Dead, Starburst, Book of Ra           |
+| Major alternative | 5-reel × 3-row, 243 Ways to Win                                  | Solid second place         | Thunderstruck II, Immortal Romance            |
+| Current trend     | Megaways (6-reel, variable symbol count, up to 117,649 ways)     | Rapidly growing since 2016 | Bonanza, Gonzo's Quest Megaways, Extra Chilli |
+| Retro / niche     | 3-reel with 1 to 5 paylines                                      | Under 5% of online market  | Double Diamond, Triple Diamond, Mega Joker    |
+
+Historical notes:
+
+- The default format consolidated as online casino volume scaled up after 2010
+- 243 Ways was popularized by Microgaming in the mid-2000s and remains a major alternative
+- Megaways is a patented engine from Big Time Gaming, licensed to many studios since 2015
 
 ---
 
