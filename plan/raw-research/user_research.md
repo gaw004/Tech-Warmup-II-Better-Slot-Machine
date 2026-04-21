@@ -64,7 +64,9 @@ As a casual player, I want to understand how to play the game immediately withou
 
 ## User Story 2
 
-## User Story 3
+## User Story 3 - Paylines
+
+As a player, I want to see lines connecting matching symbols, so I can understand at a glance how successful my spin was.
 
 ## User Story 4
 
