@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SLOT.77 · PLAY — Wireframe (Low-Fi)</title>
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --panel:#FAFAFA;
+    --line:#E4E4E4;
+    --line-2:#AAAAAA;
+    --bar:#D6D6D6;
+    --bar-2:#BEBEBE;
+    --fg:#333333;
+    --dim:#888888;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:-apple-system,system-ui,'Segoe UI',sans-serif;font-size:13px;line-height:1.4}
+
+  .page{display:flex;flex-direction:column;align-items:flex-start;gap:24px;padding:32px}
+  .vp-label{
+    font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+    color:var(--dim);padding:8px 14px;border:1px dashed var(--line-2);background:var(--panel);
+  }
+
+  .sec{position:relative}
+  .sec-label{
+    position:absolute;top:-9px;left:14px;
+    font-size:10px;font-weight:700;color:var(--dim);
+    letter-spacing:0.22em;text-transform:uppercase;
+    background:var(--bg);padding:0 8px;z-index:1;
+  }
+  .note{font-size:10px;color:var(--dim);font-style:italic;letter-spacing:0.05em}
+
+  /* bars */
+  .bar{display:inline-block;height:10px;background:var(--bar);vertical-align:middle;border-radius:1px}
+  .bar.h6{height:6px}
+  .bar.h8{height:8px}
+  .bar.h14{height:14px}
+  .bar.h20{height:20px}
+  .bar.h28{height:28px}
+  .bar.dk{background:var(--bar-2)}
+  .bar-row{display:flex;align-items:center;gap:8px}
+
+  /* button */
+  .btn{
+    font-family:inherit;cursor:pointer;
+    padding:12px 16px;
+    font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+    border:1px solid var(--line-2);background:var(--bg);color:var(--fg);
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:42px;
+  }
+  .btn.primary{
+    background:var(--fg);color:var(--bg);border:2px solid var(--fg);font-weight:700;
+  }
+  .btn.stub{min-width:100px}
+  .btn.stub .bar{width:70%}
+
+  /* X-cell */
+  .cell{
+    position:relative;
+    border:1px solid var(--line-2);background:var(--bg);overflow:hidden;
+  }
+  .cell::before,.cell::after{
+    content:'';position:absolute;inset:0;
+    border-top:1px solid var(--line-2);top:50%;
+  }
+  .cell::before{transform:rotate(45deg)}
+  .cell::after{transform:rotate(-45deg)}
+  .cell.hot{border:2px solid var(--fg)}
+
+  /* win-bar overlay */
+  .win-bar{
+    position:absolute;left:6px;right:6px;top:calc(50% - 1px);height:2px;
+    background:var(--fg);z-index:2;
+  }
+
+  /* ========== DESKTOP ========== */
+  .desktop{
+    width:1440px;height:900px;
+    padding:24px 40px;
+    display:flex;flex-direction:column;gap:18px;
+    border:1px solid var(--line-2);background:var(--bg);
+    transform-origin:top left;
+  }
+
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 20px;border:1px solid var(--line);gap:20px;
+  }
+  .topbar .right{display:flex;gap:22px;align-items:center}
+
+  .stage{
+    flex:1;display:grid;grid-template-columns:220px 1fr 240px;
+    gap:18px;min-height:0;
+  }
+
+  .side{
+    border:1px solid var(--line-2);padding:20px 18px;
+    display:flex;flex-direction:column;gap:8px;background:var(--bg);min-height:0;
+  }
+  .side .hdr{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-bottom:10px;margin-bottom:6px;border-bottom:1px solid var(--line);
+  }
+  .pl-row{
+    display:grid;grid-template-columns:22px 1fr 36px;align-items:center;gap:8px;
+    padding:8px 0;border-bottom:1px dashed var(--line);
+  }
+  .pl-row svg{width:100%;height:12px;display:block}
+  .pl-row .mini-sym{display:flex;align-items:center;gap:6px;width:100%}
+  .pl-row .mini-sym .box{width:14px;height:14px;border:1px solid var(--line-2);background:var(--bg);position:relative;flex-shrink:0}
+  .pl-row .mini-sym .box::before,.pl-row .mini-sym .box::after{content:'';position:absolute;inset:0;border-top:1px solid var(--line-2);top:50%}
+  .pl-row .mini-sym .box::before{transform:rotate(45deg)}
+  .pl-row .mini-sym .box::after{transform:rotate(-45deg)}
+  .pl-row.reserved{opacity:0.45}
+  .pl-row .dashed{display:block;width:100%;border-top:1px dashed var(--line-2)}
+  .log-row{
+    display:grid;grid-template-columns:auto 1fr auto;gap:8px;
+    padding:9px 0;border-bottom:1px dashed var(--line);
+  }
+  .side-ftr{
+    margin-top:auto;padding-top:12px;border-top:1px solid var(--line);
+    display:flex;flex-direction:column;gap:6px;
+  }
+
+  /* reel frame */
+  .reel-frame{
+    border:1px solid var(--line-2);padding:20px;
+    display:flex;flex-direction:column;background:var(--bg);min-height:0;
+  }
+  .reel-hdr{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-bottom:14px;gap:14px;
+  }
+  .reel-hdr .mid{display:flex;gap:14px;align-items:center}
+
+  .reels{
+    flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;
+    min-height:360px;
+  }
+  .reel-col{
+    display:grid;grid-template-rows:repeat(3,1fr);gap:6px;
+    border:1px solid var(--line);padding:4px;background:var(--panel);
+    position:relative;
+  }
+  .reel-ftr{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:14px;gap:14px;
+  }
+
+  /* controls */
+  .controls{
+    border:1px solid var(--line-2);padding:16px 20px;
+    display:grid;grid-template-columns:auto auto 1fr auto auto 1fr auto auto;
+    gap:20px;align-items:center;background:var(--bg);
+  }
+  .ctrl-group{display:flex;flex-direction:column;gap:6px}
+  .bet-stepper{display:flex;align-items:center;gap:8px}
+  .step-btn{
+    width:34px;height:34px;border:1px solid var(--line-2);background:var(--bg);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    font-size:16px;font-weight:700;color:var(--fg);font-family:inherit;
+  }
+  .bet-val{
+    min-width:60px;padding:6px 10px;border:1px solid var(--line);background:var(--panel);
+    display:flex;justify-content:center;align-items:center;height:34px;
+  }
+  .spin-btn{
+    font-family:inherit;cursor:pointer;
+    background:var(--fg);color:var(--bg);
+    border:2px solid var(--fg);
+    min-width:180px;height:64px;
+    font-size:18px;font-weight:700;letter-spacing:0.22em;
+  }
+
+  /* ========== MOBILE ========== */
+  .mobile{
+    width:390px;min-height:844px;
+    border:1px solid var(--line-2);background:var(--bg);
+    display:flex;flex-direction:column;
+  }
+  .m-status{
+    padding:14px 22px 10px;display:flex;justify-content:space-between;
+    border-bottom:1px solid var(--line);
+  }
+  .m-top{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:10px 18px 14px;border-bottom:1px solid var(--line);
+  }
+  .m-hud{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    padding:14px 18px;gap:14px;border-bottom:1px solid var(--line);
+  }
+  .m-hud .b{display:flex;flex-direction:column;gap:6px}
+  .m-reels{padding:18px;flex:1;display:flex;align-items:center}
+  .m-reels .reels{min-height:auto;height:260px;width:100%}
+  .m-bet{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:12px 18px;border-top:1px solid var(--line);
+  }
+  .m-spin-row{
+    display:grid;grid-template-columns:auto 1fr auto;gap:10px;
+    padding:14px 18px 24px;
+  }
+  .m-spin-row .spin-btn{min-width:0;height:56px;font-size:16px;width:100%}
+  .m-spin-row .btn{padding:10px;min-width:60px}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ======================= DESKTOP ======================= -->
+  <div class="vp-label">Desktop · 1440 × 900 · play (low-fi skeleton)</div>
+  <div class="desktop sec" id="dw">
+    <span class="sec-label">[ SCREEN · desktop play ]</span>
+
+    <!-- TOP BAR -->
+    <div class="topbar sec">
+      <span class="sec-label">[ top bar · nav + identity ]</span>
+      <span class="bar" style="width:80px"></span>
+      <span class="bar dk" style="width:180px;height:14px"></span>
+      <div class="right">
+        <span class="bar" style="width:120px"></span>
+        <span class="bar" style="width:100px"></span>
+        <span class="bar" style="width:30px"></span>
+      </div>
+    </div>
+
+    <!-- STAGE -->
+    <div class="stage">
+
+      <!-- LEFT: PAYTABLE -->
+      <aside class="side sec">
+        <span class="sec-label">[ left · paytable ]</span>
+        <div class="hdr">
+          <span class="bar" style="width:90px"></span>
+          <span class="bar" style="width:40px"></span>
+        </div>
+        <!-- line-based paylines -->
+        <div class="pl-row" style="background:var(--panel);padding-left:4px;padding-right:4px;border-bottom:1px solid var(--line-2)"><span class="bar dk" style="width:18px"></span><svg viewBox="0 0 50 14"><path d="M 2 7 L 48 7" stroke="#333" stroke-width="1.6" fill="none"/></svg><span class="bar dk" style="width:24px"></span></div>
+        <div class="pl-row"><span class="bar dk" style="width:18px"></span><svg viewBox="0 0 50 14"><path d="M 2 11 L 48 11" stroke="#aaa" stroke-width="1.2" fill="none"/></svg><span class="bar" style="width:24px"></span></div>
+        <div class="pl-row"><span class="bar dk" style="width:18px"></span><svg viewBox="0 0 50 14"><path d="M 2 7 L 12 3 L 24 11 L 36 3 L 48 7" stroke="#aaa" stroke-width="1.2" fill="none"/></svg><span class="bar" style="width:24px"></span></div>
+        <div class="pl-row"><span class="bar dk" style="width:18px"></span><svg viewBox="0 0 50 14"><path d="M 2 3 Q 25 11 48 3" stroke="#aaa" stroke-width="1.2" fill="none"/></svg><span class="bar" style="width:24px"></span></div>
+        <!-- symbol-based combos -->
+        <div class="pl-row"><span class="bar dk" style="width:18px"></span><span class="mini-sym"><span class="box"></span><span class="bar" style="width:30px"></span></span><span class="bar" style="width:24px"></span></div>
+        <div class="pl-row"><span class="bar dk" style="width:18px"></span><span class="mini-sym"><span class="box"></span><span class="bar" style="width:26px"></span></span><span class="bar" style="width:24px"></span></div>
+        <div class="pl-row"><span class="bar dk" style="width:18px"></span><span class="mini-sym"><span class="box"></span><span class="bar" style="width:34px"></span></span><span class="bar" style="width:24px"></span></div>
+        <!-- special triggers -->
+        <div class="pl-row"><span class="bar dk" style="width:18px"></span><span class="bar" style="width:80%"></span><span class="bar dk" style="width:30px"></span></div>
+        <div class="pl-row"><span class="bar dk" style="width:18px"></span><span class="bar" style="width:55%"></span><span class="bar dk" style="width:30px"></span></div>
+        <!-- reserved / designer-fill -->
+        <div class="pl-row reserved"><span class="bar" style="width:18px"></span><span class="dashed"></span><span class="bar" style="width:24px"></span></div>
+
+        <div class="side-ftr">
+          <div class="bar-row"><span class="bar" style="width:40px"></span><span class="bar dk" style="width:50px"></span></div>
+          <div class="bar-row"><span class="bar" style="width:40px"></span><span class="bar dk" style="width:40px"></span></div>
+        </div>
+      </aside>
+
+      <!-- CENTER: REELS -->
+      <div class="reel-frame sec">
+        <span class="sec-label">[ center · 5×3 reel frame ]</span>
+        <div class="reel-hdr">
+          <span class="bar dk" style="width:70px"></span>
+          <div class="mid">
+            <span class="bar" style="width:90px"></span>
+            <span class="bar" style="width:6px"></span>
+            <span class="bar dk" style="width:130px"></span>
+          </div>
+          <span class="bar" style="width:100px"></span>
+        </div>
+
+        <div class="reels">
+          <div class="reel-col">
+            <div class="cell"></div>
+            <div class="cell hot"></div>
+            <div class="cell"></div>
+            <div class="win-bar"></div>
+          </div>
+          <div class="reel-col">
+            <div class="cell"></div>
+            <div class="cell hot"></div>
+            <div class="cell"></div>
+            <div class="win-bar"></div>
+          </div>
+          <div class="reel-col">
+            <div class="cell"></div>
+            <div class="cell hot"></div>
+            <div class="cell"></div>
+            <div class="win-bar"></div>
+          </div>
+          <div class="reel-col">
+            <div class="cell"></div>
+            <div class="cell hot"></div>
+            <div class="cell"></div>
+            <div class="win-bar"></div>
+          </div>
+          <div class="reel-col">
+            <div class="cell"></div>
+            <div class="cell hot"></div>
+            <div class="cell"></div>
+            <div class="win-bar"></div>
+          </div>
+        </div>
+
+        <div class="reel-ftr">
+          <span class="bar" style="width:140px;border:1px solid var(--line-2);padding:4px 10px;height:22px"></span>
+          <span class="bar" style="width:240px"></span>
+          <span class="bar dk" style="width:180px;border:1px solid var(--line-2);padding:4px 10px;height:22px"></span>
+        </div>
+
+        <div class="note" style="margin-top:10px">
+          * cell states: idle (default) / hot (part of active payline match)<br>
+          * win-bar: overlay along the row of a firing payline
+        </div>
+      </div>
+
+      <!-- RIGHT: LOG -->
+      <aside class="side sec">
+        <span class="sec-label">[ right · spin history ]</span>
+        <div class="hdr">
+          <span class="bar" style="width:100px"></span>
+          <span class="bar dk" style="width:50px"></span>
+        </div>
+        <div class="log-row"><span class="bar" style="width:30px"></span><span class="bar dk" style="width:80px"></span><span class="bar" style="width:50px"></span></div>
+        <div class="log-row"><span class="bar" style="width:30px"></span><span class="bar" style="width:30px"></span><span class="bar" style="width:40px"></span></div>
+        <div class="log-row"><span class="bar" style="width:30px"></span><span class="bar dk" style="width:90px"></span><span class="bar" style="width:50px"></span></div>
+        <div class="log-row"><span class="bar" style="width:30px"></span><span class="bar" style="width:30px"></span><span class="bar" style="width:40px"></span></div>
+        <div class="log-row"><span class="bar" style="width:30px"></span><span class="bar dk" style="width:70px"></span><span class="bar" style="width:50px"></span></div>
+        <div class="log-row"><span class="bar" style="width:30px"></span><span class="bar" style="width:30px"></span><span class="bar" style="width:40px"></span></div>
+        <div class="log-row"><span class="bar" style="width:30px"></span><span class="bar dk" style="width:60px"></span><span class="bar" style="width:50px"></span></div>
+        <div class="log-row"><span class="bar" style="width:30px"></span><span class="bar" style="width:30px"></span><span class="bar" style="width:40px"></span></div>
+
+        <div class="side-ftr">
+          <span class="bar" style="width:80%"></span>
+          <span class="bar h20 dk" style="width:60%;margin-top:4px"></span>
+        </div>
+      </aside>
+    </div>
+
+    <!-- BOTTOM CONTROLS -->
+    <div class="controls sec">
+      <span class="sec-label">[ bottom · controls bar ]</span>
+
+      <div class="ctrl-group">
+        <span class="bar" style="width:60px"></span>
+        <span class="bar h20 dk" style="width:120px"></span>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="bar" style="width:40px"></span>
+        <div class="bet-stepper">
+          <button class="step-btn">−</button>
+          <span class="bet-val"><span class="bar dk" style="width:30px"></span></span>
+          <button class="step-btn">+</button>
+        </div>
+      </div>
+
+      <div></div>
+
+      <button class="btn stub"><span class="bar"></span></button>
+      <button class="btn stub"><span class="bar"></span></button>
+
+      <div></div>
+
+      <button class="spin-btn">▸ SPIN</button>
+
+      <div class="ctrl-group">
+        <span class="bar" style="width:40px"></span>
+        <span class="bar h20 dk" style="width:100px"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= MOBILE ======================= -->
+  <div class="vp-label">Mobile · 390 × 844 · play (low-fi skeleton)</div>
+  <div class="mobile sec" id="mw">
+    <span class="sec-label">[ SCREEN · mobile play ]</span>
+
+    <div class="m-status">
+      <span class="bar" style="width:40px"></span>
+      <span class="bar" style="width:80px"></span>
+    </div>
+
+    <div class="m-top sec">
+      <span class="sec-label">[ top bar ]</span>
+      <span class="bar" style="width:50px"></span>
+      <span class="bar dk" style="width:120px;height:14px"></span>
+      <span class="bar" style="width:20px"></span>
+    </div>
+
+    <div class="m-hud sec">
+      <span class="sec-label">[ HUD · 3 metrics ]</span>
+      <div class="b">
+        <span class="bar" style="width:30px;height:6px"></span>
+        <span class="bar h20 dk" style="width:70%"></span>
+      </div>
+      <div class="b">
+        <span class="bar" style="width:30px;height:6px"></span>
+        <span class="bar h20 dk" style="width:50%"></span>
+      </div>
+      <div class="b">
+        <span class="bar" style="width:30px;height:6px"></span>
+        <span class="bar h20 dk" style="width:80%"></span>
+      </div>
+    </div>
+
+    <div class="m-reels sec">
+      <span class="sec-label">[ reels 5×3 ]</span>
+      <div class="reels">
+        <div class="reel-col">
+          <div class="cell"></div>
+          <div class="cell hot"></div>
+          <div class="cell"></div>
+          <div class="win-bar"></div>
+        </div>
+        <div class="reel-col">
+          <div class="cell"></div>
+          <div class="cell hot"></div>
+          <div class="cell"></div>
+          <div class="win-bar"></div>
+        </div>
+        <div class="reel-col">
+          <div class="cell"></div>
+          <div class="cell hot"></div>
+          <div class="cell"></div>
+          <div class="win-bar"></div>
+        </div>
+        <div class="reel-col">
+          <div class="cell"></div>
+          <div class="cell hot"></div>
+          <div class="cell"></div>
+          <div class="win-bar"></div>
+        </div>
+        <div class="reel-col">
+          <div class="cell"></div>
+          <div class="cell hot"></div>
+          <div class="cell"></div>
+          <div class="win-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="m-bet sec">
+      <span class="sec-label">[ bet stepper ]</span>
+      <button class="step-btn">−</button>
+      <span class="bet-val"><span class="bar dk" style="width:30px"></span></span>
+      <button class="step-btn">+</button>
+      <button class="btn stub" style="min-width:70px"><span class="bar"></span></button>
+    </div>
+
+    <div class="m-spin-row sec">
+      <span class="sec-label">[ spin row ]</span>
+      <button class="btn stub"><span class="bar"></span></button>
+      <button class="spin-btn">▸ SPIN</button>
+      <button class="btn stub"><span class="bar"></span></button>
+    </div>
+  </div>
+
+  <div class="note" style="max-width:900px;margin-top:8px;line-height:1.7">
+    <b>Responsive mapping:</b><br>
+    · Desktop 3-column (paytable | reels | log) → Mobile stack: paytable &amp; log removed, reels + HUD only<br>
+    · Paytable detail → mobile: "i" button (modal or separate screen)<br>
+    · Spin log → hidden on mobile (optionally swipe-up sheet)<br>
+    · Controls 8-col grid → mobile 2-row: bet stepper + spin row<br>
+    · Top bar title: chapter label omitted on mobile (space constraint)<br>
+    <br>
+    <b>Paytable extensibility:</b><br>
+    · Rows are rule-agnostic — each row may represent: line payline (SVG preview), symbol combo (N-of-a-kind), scatter / bonus trigger, ways-to-win, cluster pay, or any designer-defined payout rule<br>
+    · Preview slot + payout column stay constant; internals swap per rule type<br>
+    · Active row highlighting applies regardless of rule type
+  </div>
+
+</div>
+
+<script>
+  function fit(){
+    document.querySelectorAll('#dw, #mw').forEach(el=>{
+      el.style.transform='none';
+      const w = el.offsetWidth;
+      const avail = window.innerWidth - 64;
+      if(w > avail){
+        const s = avail / w;
+        el.style.transformOrigin = 'top left';
+        el.style.transform = `scale(${s})`;
+        el.style.marginBottom = `${-(el.offsetHeight * (1-s)) + 24}px`;
+      } else {
+        el.style.marginBottom = '0';
+      }
+    });
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', fit);
+  fit();
+</script>
+</body>
+</html>
