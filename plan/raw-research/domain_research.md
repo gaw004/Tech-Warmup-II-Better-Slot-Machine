@@ -191,6 +191,12 @@ Note: RTP and Hit Frequency are independent design parameters. Two games with th
 
 ### 7.4 Starburst
 **Mechanics**: Deliberately minimalist: 5 reels × 3 rows, 10 fixed paylines paying both ways. The only special feature is the expanding Starburst Wild, which lands on reels 2, 3, and 4, expands to cover the entire reel, locks in place, and triggers a re-spin (up to three sequential re-spins if new wilds land). There are no free spins, no scatter, no bonus round, no multipliers, no progressive jackpot. This radical simplicity is exactly what made it commercially dominant.
+<div align="center">
+  <figure>
+    <img src="./images_in_domain_research/Starburst gameply images.png">
+    <figcaption>Starburst Touch mobile interface by NetEnt, featuring a 5-reel, 3-row layout with vibrant jewel symbols and the signature expanding Starburst Wild mechanic.</figcaption>
+  </figure>
+</div>
 
 **Player incentives**: RTP is operator-configurable on a ladder from 96.09% (default) down to 90.05% — players are well-advised to check. Volatility is low, hit frequency is exceptionally high at ~22.6% (a win every ~4.4 spins), and the wild feature triggers about every 11.9 spins. Max win is 500× bet / 50,000 coins on the classic spec (NetEnt's current page cites 800× on updated builds). Bet range is 0.10 to 100.
 
