@@ -13,6 +13,7 @@ Domain research document for the Tech Warmup II: Better Slot Machine project.
 5. [Rule Systems (Win Evaluation Rules)](#5-rule-systems-win-evaluation-rules)
 6. [Math Model](#6-math-model)
 7. [Analysis of 7 Most Popuplar Slots](#7-analysis-of-7-most-popular-slots)
+8. [Demographics and Behavioral Profile of Frequent Slot Players](#8-demographics-and-behavioral-profile-of-frequent-slot-players)
 
 ---
 
@@ -241,4 +242,46 @@ Note: RTP and Hit Frequency are independent design parameters. Two games with th
 The task prompt's reference to Cynthia Jay-Brennan's $34.9M and the $39.7M Excalibur jackpot requires correction: contemporaneous primary reporting (Las Vegas Sun, January 2000; Guinness World Records) confirms both were won on IGT's Megabucks, not Wheel of Fortune. The largest true Wheel of Fortune jackpot on record is Tommy McMillan's $14,387,950 at Hard Rock Biloxi on February 10, 2009 — still the largest slot jackpot in Mississippi history. Other major Wheel hits include $9.9M at Beau Rivage (2002), $8.3M at Fitz Casino Tunica (2013), and multiple $1M+ wins at Beau Rivage as recently as January 2026.
 
 **Sensory design**: The franchise is a masterclass in branded audio engineering. IGT engineers developed an entirely new higher-capacity speaker (nicknamed "the Pope's hat" for its mitre-shaped gold housing) to accommodate the show's audio files, and hired IGT's first dedicated sound designer, Jeff Laakso, specifically for this game. The crowd chant "WHEEL! OF! FORTUNE!" plays on every bonus trigger; show announcer Charlie O'Donnell's voice still plays on cabinets 15 years after his 2010 death. Boris Hallerbach of IGT: "a casino just doesn't sound right if you can walk through it and not hear a crowd shout 'Wheel of Fortune!'" The physical wheel spin is both an individual event and a crowd-drawing spectacle — on community cabinets the 76-inch wheel is visible across the floor, pulling in walk-up players.
+
+## 8. Demographics and Behavioral Profile of Frequent Slot Players
+
+Academic studies, gambling-commission reports, and market research consistently identify slot players as a distinct demographic within the broader gambling population. The profile has shifted somewhat over the past fifteen years as online and younger cohorts enter, but core patterns remain.
+
+### Gender
+
+Slot players skew female more than any other casino game. In Harrah's 2006 player survey, casino visitors were 48% male and 52% female, but **slot players skewed 56% female**. A widely cited Oregon State University study found that women aged 55–60 constitute the core slot demographic and that about **70% of casino revenue comes from female players** (a figure often quoted but with methodological caveats — it reflects casino-floor revenue at studied properties rather than a global truth). 
+
+Women tend to prefer slots over table games because slots are perceived as lower-risk, non-competitive, non-confrontational, and self-paced. By contrast, sports betting and poker skew heavily male.
+
+### Age
+
+Frequent slot players are older than the general gambling population. Harrah's 2006 data showed a **mean casino-gambler age of 46 and a median of 47**. Research on the "slot enthusiast" demographic has found the densest concentration in the **55–64 age bracket**, particularly for retirees with available daytime hours. The 36–50 bracket is also heavily represented, especially among working middle-class players who visit casinos on weekends.
+
+Younger cohorts (18–34) play slots less frequently than older cohorts and show a stronger preference for sports betting, poker, and online casino table games. Where younger players do play slots, they gravitate toward branded titles (Game of Thrones, Avengers) and video slots rather than three-reel classics. A recent IGD Leaders analysis found slot participation roughly **28 points lower in the 22–37 age range** than in older groups.
+
+### Socioeconomic Status
+
+The stereotype of the poor senior pouring her Social Security check into a machine is not supported by the research. The OSU study found the most common slot enthusiast profile was a female homeowner aged 55–60 with some college education and annual household income above $55,000. Broader casino-visitor research shows:
+
+* **Income:** Median household income among casino visitors falls between approximately $35,000 and $100,000, close to the U.S. median.
+* **Homeownership:** 78% of casino gamblers are homeowners.
+* **Outlook:** Gamblers are slightly more likely than non-gamblers to describe themselves as optimistic about their financial situation.
+
+However, socioeconomic vulnerability is strongly associated with slot revenue concentration at the high end. Research consistently finds that a small minority of players generates the majority of slot revenue. Industry data shows that roughly **5% of players** — the most frequent, highest-spending users — can account for **70–82% of casino revenue**, depending on the venue. 
+
+Population data from Australia and the UK echo this pattern: problem and at-risk gamblers are vastly over-represented among high-frequency slot players. Nevada and Oklahoma have the highest per-capita gambling-addiction rates in the U.S., with **Oklahoma at approximately 6.2%** and **Nevada at 6.0%**.
+
+### Behavioral Traits and Motivations
+
+Slot players separate into recognizable motivational clusters. The OSU factor-cluster analysis identified two main groups:
+
+* **"Utilitarian Gambling Seekers"**: More retirees, flexible schedules, smaller bets, long sessions, entertainment-oriented motivation.
+* **"Excitement Gambling Seekers"**: Younger, higher income, higher homeownership, larger bets (23% regularly played $1 denomination), shorter sessions, more thrill-seeking.
+
+Broader behavioral patterns from the same literature and NCPG data:
+
+* **Payout Preference:** **60%+** of surveyed slot players prefer small, frequent payouts over occasional large ones — evidence that the dopamine hit of frequent positive reinforcement matters more than jackpot size for most players.
+* **Jackpots:** Only 33% say they prefer progressive-jackpot machines, but among those who do, 70% name *Wheel of Fortune* as their favorite.
+* **Gender Differences:** Women lean toward "functional" motivations (social experience, excitement, fun), while men skew more toward financial motivations.
+* **Session Length:** Slot-only players visit more frequently and spend longer sessions than mixed-game players.
 
