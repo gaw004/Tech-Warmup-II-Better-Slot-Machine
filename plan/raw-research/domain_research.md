@@ -154,8 +154,8 @@ Note: RTP and Hit Frequency are independent design parameters. Two games with th
 
 <div align="center">
   <figure>
-    <img src="./images_in_domain_research/image-Buffalo-Gold-Collection-normal-gameplay.webp" alt="A image of Buffalo Gold gameplay interface">
-    <figcaption>A image of Buffalo Gold gameplay interface</figcaption>
+    <img src="./images_in_domain_research/Buffalo Gold pay table.webp" alt="A image of Buffalo Gold Pay Table">
+    <figcaption>A image of Buffalo Gold pay table</figcaption>
   </figure>
 </div>
 
