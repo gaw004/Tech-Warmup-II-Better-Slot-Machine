@@ -219,7 +219,7 @@ Note: RTP and Hit Frequency are independent design parameters. Two games with th
 **Mechanics**: Classic 3-reel, single-payline stepper. Symbols: cherries, single/double/triple BAR, 7, and the Double Diamond logo — nothing more. The core innovation is the multiplying wild: one Double Diamond in a winning combo doubles the payout; two Double Diamonds quadruples it; three on the payline is the top jackpot. No bonus rounds, no free spins, no scatters, no second-screen. The elegance of the 2×/4× wild mechanic is why the formula has been copied across the entire 3-reel industry.
 <div align="center">
   <figure style="center">
-    <img src="./images_in_domain_research/Double Diamond.png">
+    <img src="./images_in_domain_research/Double Diamond.png" style="display: block; margin: 0 auto;">
     <em>Classic slot machine UI of Double Diamond, highlighting the traditional BAR and Diamond symbols, mechanical-style reels, and the 'Boost' and 'Spin' tactile button interface.</em>
   </figure>
 </div>
