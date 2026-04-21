@@ -204,6 +204,12 @@ Note: RTP and Hit Frequency are independent design parameters. Two games with th
 
 ### 7.5 Divine Fortune
 **Mechanics**: 5 reels × 3 rows with 20 fixed paylines, wrapped in two signature mechanics. Falling Wilds Re-Spin: any Pegasus wild triggers a free re-spin and shifts one position downward each spin, continuing as long as new wilds land. Wild-on-Wild: when an overlay wild lands on an existing wild, the wild expands to cover the full reel and awards an additional re-spin. The Jackpot Bonus Game is triggered by 3/4/5 bonus coin symbols and plays on a 5×3 grid where sticky coins land and the player tries to fill rows: one row = Minor (fixed 20×), two rows = Major (fixed 100×), all three rows = the progressive Mega, which seeds at €10,000.
+<div align="center">
+  <figure>
+    <img src="./images_in_domain_research/divine_fortune_desktop_screenshot_megajackpot_win_ca116e434a.webp">
+    <figcaption>Divine Fortune (NetEnt) gameplay showing a 'Mega Jackpot' win of €129,361.01 during the Jackpot Bonus game, featuring the 5x3 gold coin collection grid.</figcaption>
+  </figure>
+</div>
 
 **Player incentives**: Free spins award 5/8/12 at 3/4/5 scatters, with Falling Wilds remaining active throughout. Headline RTP is 96.59% — above industry average — but with an important nuance: base-game RTP is roughly 92.52%, with ~4.07% contributed to the Mega Jackpot pool. Volatility is medium-to-high. Base-game max win is 600× per spin. Crucially, because NetEnt designed the jackpot as locally pooled per operator/state rather than globally networked, the game was purpose-built for the state-siloed US regulatory environment — the single most important reason it became NetEnt's US wedge. Notable wins include a $990,000 Mega on BetMGM Michigan (June 2021), $417,787 on FanDuel MI (Jan 2021), and dozens of six-figure hits across NJ/PA/MI.
 
