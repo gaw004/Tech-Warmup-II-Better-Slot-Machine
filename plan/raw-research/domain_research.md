@@ -220,7 +220,7 @@ Note: RTP and Hit Frequency are independent design parameters. Two games with th
 <div align="center">
   <figure style="center">
     <img src="./images_in_domain_research/Double Diamond.png" style="display: block; margin: 0 auto;">
-    <em>Classic slot machine UI of Double Diamond, highlighting the traditional BAR and Diamond symbols, mechanical-style reels, and the 'Boost' and 'Spin' tactile button interface.</em>
+    <figurecaption>Classic slot machine UI of Double Diamond, highlighting the traditional BAR and Diamond symbols, mechanical-style reels, and the 'Boost' and 'Spin' tactile button interface.</figurecaption>
   </figure>
 </div>
 
