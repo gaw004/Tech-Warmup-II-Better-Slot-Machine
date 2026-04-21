@@ -207,7 +207,7 @@ Note: RTP and Hit Frequency are independent design parameters. Two games with th
 <div align="center">
   <figure>
     <img src="./images_in_domain_research/divine_fortune_desktop_screenshot_megajackpot_win_ca116e434a.webp">
-    <figcaption>Divine Fortune (NetEnt) gameplay showing a 'Mega Jackpot' win of €129,361.01 during the Jackpot Bonus game, featuring the 5x3 gold coin collection grid.</figcaption>
+    <em>Divine Fortune gameplay showing a 'Mega Jackpot' win of €129,361.01 during the Jackpot Bonus game, featuring the 5x3 gold coin collection grid.</em>
   </figure>
 </div>
 
