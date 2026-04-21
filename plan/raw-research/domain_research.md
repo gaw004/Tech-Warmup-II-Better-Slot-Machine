@@ -147,7 +147,7 @@ Note: RTP and Hit Frequency are independent design parameters. Two games with th
 
 ---
 
-## 7. Analysis of 7 Most Popuplar Slots
+## 7. Analysis of 7 Most Popular Slots
 
 ### 7.1 Buffalo Gold
 **Mechanics**: A 5-reel, 4-row grid using Aristocrat's XTRA Reel Power system, which awards 1,024 ways to win. Players pay per reel rather than per line. The stacked Buffalo symbol is the top pay, with eagle, cougar, wolf, and elk filling out the animal paytable; the Sunset wild appears only on reels 2, 3, and 4 and substitutes for all but the gold-coin scatter. Free spins trigger at 3/4/5 scatters for 8/15/20 spins and retrigger indefinitely, with stacked 2× or 3× wild multipliers that compound to a theoretical 27× (3×3×3). The game's signature feature is Gold Buffalo collection: during free spins, gold buffalo head icons accumulate in a meter; hitting 10 gold heads transforms every buffalo symbol on the reels into a Gold Buffalo for the remainder of the bonus, awarding 10 additional free spins and dramatically expanding the paytable on subsequent stacked hits.
