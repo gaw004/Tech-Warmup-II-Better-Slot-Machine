@@ -165,6 +165,12 @@ Note: RTP and Hit Frequency are independent design parameters. Two games with th
 
 ### 7.2 Dragon Link
 **Mechanics**: All 10 titles (Autumn Moon, Golden Century, Panda Magic, Happy & Prosperous, Genghis Khan, Peace & Long Life, Golden Gong, Peacock Princess, Silk Road, Spring Festival) share a 5×3 layout with 25–50 paylines. The defining mechanic is Hold & Spin: landing 6+ orb/fireball symbols locks them in place and awards three respins, with every new orb resetting the counter to three — filling all 15 grid positions automatically awards the Grand Jackpot. Each orb carries either a credit value or a jackpot tier (Mini/Minor/Major/Grand). Critically, Dragon Link improved on its 2015 predecessor Lightning Link by using a common orb trigger symbol across all themes and by allowing Hold & Spin to trigger inside free games — a bonus within a bonus.
+<div align="center">
+  <figure>
+    <img src="./images_in_domain_research/Dragon Link gameplay interface.webp" alt="A image of Dragon Link gameplay interface">
+    <figcaption>Dragon Link gameplay interface showing progressive jackpots and reel layout.</figcaption>
+  </figure>
+</div>
 
 **Player incentives**: Mini and Minor are fixed; Major is a local progressive capped modestly; Grand is a linked wide-area progressive that resets to $1,000,000 on the $1M version and $1,125,000+ on the newer $2M version. Official RTP is 95.2%, volatility is high, and real-world Grand wins in 2024–2025 have included a $2,190,214 hit at Seminole Hard Rock Tampa (Nov 2025), a $1,142,215 win at The Palazzo, and multiple seven-figure wins at MGM Grand Detroit, Red Rock, and Coconut Creek. Seminole Hard Rock's Dragon Link machines alone paid $20M+ in jackpots in a single month in June 2025.
 
