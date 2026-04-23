@@ -1,0 +1,158 @@
+/* P19 demo harness layout — mirrors the visual rhythm of BottomBarDemo /
+   TopBarDemo so the three acceptance pages stack consistently in App.tsx. */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  font-family: 'Rajdhani', 'Inter', system-ui, sans-serif;
+  color: #ffffff;
+  background: linear-gradient(180deg, #0b0714 0%, #120c1f 100%);
+  border-radius: 18px;
+  margin: 24px 0;
+  border: 1px solid #2a2140;
+}
+
+.header { display: flex; flex-direction: column; gap: 6px; }
+.title {
+  margin: 0;
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.subtitle { margin: 0; color: #9a8fb8; font-size: 13px; line-height: 1.5; }
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #2a2140;
+  border-radius: 12px;
+  background: rgba(26, 21, 40, 0.55);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #9a8fb8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.tierButton {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #2a2140;
+  background: #120c1f;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition:
+    border-color 120ms ease-out,
+    transform 120ms ease-out,
+    box-shadow 180ms ease-out;
+}
+
+.tierButton:hover {
+  transform: translateY(-1px);
+  border-color: #c8ff00;
+  box-shadow: 0 0 14px rgba(200, 255, 0, 0.25);
+}
+
+.tierName {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #c8ff00;
+}
+
+.tierCredits {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.tierMeta {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #9a8fb8;
+}
+
+.tierButton_epic .tierName { color: #ff2d78; }
+.tierButton_mega .tierName { color: #00e7f0; }
+
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #2a2140;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0, 231, 240, 0.08), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 45, 120, 0.08), transparent 55%),
+    #0b0714;
+}
+
+.gameSim {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 28px;
+  max-width: 500px;
+  text-align: center;
+  z-index: 1;
+}
+
+.gameLabel {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #9a8fb8;
+}
+
+.gameDetail {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #9a8fb8;
+}
+
+.ticker {
+  margin-top: 8px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px;
+  color: #37e29a;
+}
+
+.log {
+  margin: 0;
+  padding: 10px 12px;
+  background: #0b0714;
+  border: 1px solid #2a2140;
+  border-radius: 8px;
+  color: #c8ff00;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  min-height: 80px;
+}

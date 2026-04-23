@@ -1,0 +1,316 @@
+/* P19 win celebration overlay — §11.1 table rendered as six tier layers.
+   Root stays `pointer-events: none` so the underlying game loop continues
+   receiving input; only the tap-to-skip button on big+ tiers re-enables
+   pointer events on its own slice. */
+
+.root {
+  position: absolute;
+  inset: 0;
+  z-index: 30; /* tokens.ts `zIndex.winOverlay` */
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  color: #ffffff;
+  font-family: 'Rajdhani', 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 28px;
+  border-radius: 16px;
+  text-align: center;
+  animation: dh-overlay-enter 260ms ease-out both;
+}
+
+.headline {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-shadow:
+    0 0 18px rgba(255, 45, 120, 0.6),
+    0 0 6px rgba(200, 255, 0, 0.6);
+}
+
+.counter {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.counterValue {
+  color: #c8ff00;
+  text-shadow: 0 0 22px rgba(200, 255, 0, 0.6);
+}
+
+.counterUnit {
+  font-size: 0.35em;
+  color: #9a8fb8;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.subhead {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #9a8fb8;
+}
+
+/* ── Tier-specific sizing ────────────────────────────────────────────── */
+
+.tier_small .headline { font-size: 14px; color: #00e7f0; }
+.tier_small .counter { font-size: 28px; }
+.tier_small .subhead { display: none; }
+
+.tier_medium .headline { font-size: 18px; color: #ff2d78; }
+.tier_medium .counter { font-size: 36px; }
+
+.tier_big .headline { font-size: 28px; color: #ffffff; }
+.tier_big .counter { font-size: 54px; }
+
+.tier_mega .headline { font-size: 36px; color: #c8ff00; }
+.tier_mega .counter { font-size: 72px; }
+
+.tier_epic .headline { font-size: 44px; color: #ff2d78; }
+.tier_epic .counter { font-size: 96px; }
+
+/* ── Small: gentle reel glow ─────────────────────────────────────────── */
+
+.smallGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 231, 240, 0.25) 0%,
+    rgba(0, 231, 240, 0) 70%
+  );
+  animation: dh-fade-out 500ms ease-out forwards;
+}
+
+/* ── Medium: payline trace in neon pink ──────────────────────────────── */
+
+.mediumTrace {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 80px;
+  transform: translateY(-50%);
+  fill: none;
+  stroke: #ff2d78;
+  stroke-width: 0.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px rgba(255, 45, 120, 0.8));
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: dh-trace 800ms ease-out forwards;
+}
+
+/* ── Big: pulsing bars behind the headline ───────────────────────────── */
+
+.bigPulse {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 40px 80px;
+  align-items: center;
+  justify-items: stretch;
+}
+
+.bigPulse > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(200, 255, 0, 0.2), rgba(255, 45, 120, 0.2));
+  border: 1px solid rgba(200, 255, 0, 0.5);
+  border-radius: 10px;
+  animation: dh-pulse 700ms ease-in-out infinite;
+}
+
+.bigPulse > span:nth-child(2) { animation-delay: 140ms; }
+.bigPulse > span:nth-child(3) { animation-delay: 280ms; }
+
+/* ── Mega: flash + cinematic zoom ────────────────────────────────────── */
+
+.megaCinematic {
+  position: absolute;
+  inset: 0;
+}
+
+.megaFlash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 0%, transparent 60%);
+  animation: dh-mega-flash 1.4s ease-out infinite;
+}
+
+.megaZoom {
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+    from 0deg,
+    rgba(200, 255, 0, 0.25),
+    rgba(255, 45, 120, 0.25),
+    rgba(0, 231, 240, 0.25),
+    rgba(200, 255, 0, 0.25)
+  );
+  animation: dh-mega-zoom 3.2s linear infinite;
+  opacity: 0.7;
+  mix-blend-mode: screen;
+}
+
+/* ── Epic: matrix rain + vault doors ─────────────────────────────────── */
+
+.epicScene {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, #120c1f 0%, #000000 100%);
+}
+
+.matrix {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  opacity: 0.55;
+}
+
+.matrixColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  color: #37e29a;
+  text-shadow: 0 0 6px rgba(55, 226, 154, 0.7);
+  font-size: 18px;
+  line-height: 1.1;
+  transform: translateY(-100%);
+  animation: dh-matrix-rain 2.4s linear infinite;
+}
+
+.matrixGlyph {
+  opacity: 0.2;
+  animation: dh-matrix-fade 2.4s linear infinite;
+}
+
+.matrixGlyph:nth-child(3n) { opacity: 0.85; }
+
+.vaultDoor {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+}
+
+.vaultLeaf {
+  flex: 1;
+  background: linear-gradient(90deg, #0b0714 0%, #1a1528 100%);
+  border: 2px solid #c8ff00;
+  box-shadow:
+    inset 0 0 40px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(200, 255, 0, 0.4);
+  transform-origin: left center;
+  animation: dh-vault-left 1800ms ease-out forwards;
+}
+
+.vaultLeaf:last-child {
+  transform-origin: right center;
+  background: linear-gradient(270deg, #0b0714 0%, #1a1528 100%);
+  animation-name: dh-vault-right;
+}
+
+/* ── Tap-to-skip affordance ──────────────────────────────────────────── */
+
+.skip {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: none;
+  color: #9a8fb8;
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 0 24px;
+}
+
+.skipHint {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(26, 21, 40, 0.7);
+  border: 1px solid rgba(200, 255, 0, 0.4);
+  animation: dh-skip-pulse 1.6s ease-in-out infinite;
+}
+
+/* ── Keyframes ───────────────────────────────────────────────────────── */
+
+@keyframes dh-overlay-enter {
+  from { opacity: 0; transform: translateY(6px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes dh-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes dh-trace {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes dh-pulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.9); }
+  50% { opacity: 0.9; transform: scaleY(1.05); }
+}
+
+@keyframes dh-mega-flash {
+  0%, 100% { opacity: 0; }
+  20% { opacity: 0.85; }
+  60% { opacity: 0.15; }
+}
+
+@keyframes dh-mega-zoom {
+  from { transform: scale(1) rotate(0deg); }
+  to { transform: scale(1.3) rotate(360deg); }
+}
+
+@keyframes dh-matrix-rain {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+@keyframes dh-matrix-fade {
+  0% { opacity: 0.15; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.15; }
+}
+
+@keyframes dh-vault-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes dh-vault-right {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes dh-skip-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}

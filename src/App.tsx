@@ -1,29 +1,21 @@
-import { palette, typography } from './theme/tokens';
+import { BottomBarDemo } from './ui/BottomBarDemo';
+import { ReelGridDemo } from './ui/ReelGridDemo';
+import { RetentionScreensDemo } from './ui/RetentionScreensDemo';
+import { TopBarDemo } from './ui/TopBarDemo';
+import { WinOverlayDemo } from './ui/WinOverlayDemo';
 
+// P14 + P15 + P16 + P19 + P21 acceptance mount. P23's GameController will
+// replace this once the game loop lands; until then the demo pages are the
+// only visible view.
 function App() {
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        background: palette.backgroundDeep,
-        color: palette.textPrimary,
-        fontFamily: typography.fontStackPrimary,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        padding: 24,
-      }}
-    >
-      <div>
-        <h1 style={{ color: palette.spinNeon, margin: 0, letterSpacing: '0.08em' }}>
-          DATA HEIST
-        </h1>
-        <p style={{ color: palette.mutedText, marginTop: 12 }}>
-          Scaffold ready. Game logic lands in P01+.
-        </p>
-      </div>
-    </div>
+    <>
+      <ReelGridDemo />
+      <BottomBarDemo />
+      <TopBarDemo />
+      <WinOverlayDemo />
+      <RetentionScreensDemo />
+    </>
   );
 }
 
