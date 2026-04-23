@@ -96,7 +96,7 @@ describe('createMockDailyBonusStore contract', () => {
   });
 
   it('claim() advances streak and flips canClaim off for the same day', () => {
-    let ts = 1_700_000_000_000;
+    const ts = 1_700_000_000_000;
     const store = createMockDailyBonusStore({ now: () => ts });
     const reward = store.claim();
     expect(reward).not.toBeNull();

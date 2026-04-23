@@ -7,3 +7,7 @@ docs/api/
 .env
 .env.local
 .vite/
+test-results/
+playwright-report/
+blob-report/
+.playwright/

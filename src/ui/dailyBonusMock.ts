@@ -110,7 +110,13 @@ export function createMockDailyBonusStore(
   }
 
   function getState(): DailyBonusState {
-    snapshot = buildState();
+    // `useSyncExternalStore` invokes `getSnapshot` on every render and treats
+    // a new reference as a state change — which would loop infinitely if we
+    // rebuilt unconditionally. Rebuild, compare structurally, and keep the
+    // previous reference when nothing materially changed.
+    const fresh = buildState();
+    if (areStatesEqual(snapshot, fresh)) return snapshot;
+    snapshot = fresh;
     return snapshot;
   }
 
@@ -140,4 +146,22 @@ export function createMockDailyBonusStore(
 /** Aggregate CC across the entire 7-day cycle — used by the demo strip. */
 export function cycleTotalCc(): Credits {
   return Object.values(DAILY_REWARDS).reduce((sum, r) => sum + r.cc, 0);
+}
+
+function areRewardsEqual(a: DailyBonusReward, b: DailyBonusReward): boolean {
+  return (
+    a.day === b.day &&
+    a.cc === b.cc &&
+    a.freeSpins === b.freeSpins &&
+    a.heistEntry === b.heistEntry
+  );
+}
+
+function areStatesEqual(a: DailyBonusState, b: DailyBonusState): boolean {
+  return (
+    a.lastClaimTs === b.lastClaimTs &&
+    a.streakDay === b.streakDay &&
+    a.canClaim === b.canClaim &&
+    areRewardsEqual(a.todaysReward, b.todaysReward)
+  );
 }
